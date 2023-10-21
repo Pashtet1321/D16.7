@@ -1,0 +1,21 @@
+{% extends 'news/layout.html' %}
+
+{% block title %}
+    Новости
+{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Все новости</h1>
+
+        {% for i in news %}
+            <div class="alert alert-warning">
+                <h3>{{ i.title }}</h3>
+                <p>{{ i.text|linebreaks|truncatewords:50}}</p>
+                <div class="clear"></div>
+                <p class="link-read-news"><a href="#"><button class="btn btn-primary">Читать полностью</button></a></p>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
